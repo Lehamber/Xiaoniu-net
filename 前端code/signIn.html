@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智农慧通-用户注册</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="css/signIn.css">
+    <!-- 引入封装好的包 -->
+    <script src="./js/module/serverIP.js"></script>
+    <script src="./js/module/sendAjax.js"></script>
+    <script src="./js/module/proCookie.js"></script>
+
+    <!-- 引入页面加载后 执行的js文件 -->
+    <script src="./js/module/verfiyCookie.js"></script>
+    <script src="./js/signIn.js"></script>
+</head>
+
+<body>
+    <div id="up-nav">
+        <div class="container over-clear">
+            <div class="fleft left-div">
+                <span class="tag">欢迎来到智农慧通</span>
+                <div class="beforeLogin">
+                    <span class="iconfont icon">&#xe651;</span>
+                    <span class="login"><a href="./logIn.html">注册登录</a></span>
+                </div>
+                <div class="afterLogin">
+                    <span class="iconfont icon">&#xe651;</span>
+                    <span class="userName">简小橘</span>
+                    <span class="exit">退出</span>
+                </div>
+            </div>
+            <div class="fright right-div">
+                <span class="new-store"><a href="#">我要入驻开店</a></span>
+                <span class="iconfont tag">&#xe63b;</span>
+                <span class="person-center"><a href="#">个人中心</a></span>
+                <span class="iconfont tag">&#xe63b;</span>
+                <span class="backstore"><a href="#">供应商后台</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="banner"></div>
+        <div class="title-line">
+            <span class="tit">注册</span>
+        </div>
+        <div class="register-container">
+            <form onsubmit="return false">
+                <div class="form-group">
+                    <label for="userName" class="sr-only">username</label>
+                    <input type="text" id="userName" class="form-control" placeholder="用户名">
+                    <p class="formatInfo">用户名格式不合法。用户名由2-20个字母、数字、汉字、-和_组成，且必须包含字母或汉字</p>
+                    <p class="repeatInfo">该用户名以被使用</p>
+                    <p class="inviteInfo">请输入用户名</p>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">email</label>
+                    <input type="text" id="email" class="form-control" placeholder="邮箱">
+                    <p class="formatInfo">邮箱格式不合法</p>
+                    <p class="repeatInfo">该邮箱已被注册</p>
+                    <p class="inviteInfo">请输入邮箱地址</p>
+                </div>
+                <div class="form-group">
+                    <label for="userPhone" class="sr-only">userPhone</label>
+                    <input type="text" id="userPhone" class="form-control" placeholder="手机号">
+                    <p class="formatInfo">手机号格式不合法</p>
+                    <p class="repeatInfo">该手机号已被注册</p>
+                    <p class="inviteInfo">请输入邮箱地址</p>
+                </div>
+                <div id="safe_window">
+                    <p>安全系数</p>
+                    <div class="a_pw">
+                        <div class="safe_line"></div>
+                        <div class="safe_line"></div>
+                        <div class="safe_line"></div>
+                        <div class="safe_line"></div>
+                        <div class="safe_line"></div>
+                        <span style="display: none;">弱</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="sr-only">password</label>
+                    <input type="password" id="password" class="form-control" placeholder="密码（6-16个字符组成，区分大小写）">
+                    <p class="formatInfo">密码由6-20个字符组成，且不能包含除!@#$%^&*_+-=?之外的其它特殊字符</p>
+                    <p class="inviteInfo">请输入密码</p>
+                </div>
+                <div class="checkbox">
+                    <label class="checkLabel">
+                        <input type="checkbox" value="123" id="checkbox">
+                        <span>我已同意</span>
+                        <a href="#">《智农慧通用户使用协议》</a>
+                        <span>和</span>
+                        <a href="#">《智农慧通隐私政策》</a>
+                    </label>
+                </div>
+                <input type="button" class="btn btn-success" id="btnInput" value="注册" disabled>
+                <div class="backLogIn">
+                    <span class="iconfont">&#xe635;</span>
+                    <a href="./logIn.html">已注册，去登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <div><span>豫ICP备13007354号-1 | 服务热线：400-009-8699</span></div>
+        <div><span>互联网药品信息服务资格证书:(湘)-经营性-2020-0005 河南智农慧通科技有限公司
+            营业执照号</span></div>
+        <div><span>增值电信业务经营许可证：经营许可证编号：豫B2-20130072</span></div>
+        <div><span>©-2020 Cnhnb B2B SYSTEM All Rights Reserved</span></div>
+        <div><img src="./images/footer.png" alt="行业认证"></div>
+    </div>
+
+</body>
+
+</html>

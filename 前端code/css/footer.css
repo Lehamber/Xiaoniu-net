@@ -1,0 +1,20 @@
+#footer {
+    width: 100%;
+    min-width: 1200px;
+    color: #646464;
+    font-size: 12px;
+}
+
+#footer>div {
+    text-align: center;
+    padding: 16px 0 0;
+}
+
+#footer img {
+    width: 100px;
+    height: 28px;
+}
+
+#footer>div:last-of-type {
+    padding-bottom: 20px;
+}

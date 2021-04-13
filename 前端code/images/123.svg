@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>形状@2x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="pc二期" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="商品详情页2" transform="translate(-875.000000, -745.000000)" fill="#45B035">
+            <g id="分组-13" transform="translate(680.000000, 699.000000)">
+                <g id="分组-3" transform="translate(77.000000, 0.000000)">
+                    <g id="分组-56" transform="translate(118.000000, 46.000000)">
+                        <path d="M16,0 L16,16 L0,16 L16,0 Z M13.6350838,8.65818693 L10.2578038,12.263737 L8.36912276,10.1966592 C8.18285586,9.99279836 7.86659482,9.97853563 7.66273395,10.1648025 C7.45887308,10.3510694 7.44461035,10.6673305 7.63087724,10.8711913 L9.88412029,13.3372661 C10.0807116,13.5524265 10.4189175,13.5545215 10.6181592,13.3418131 L14.3649162,9.34181307 C14.5536943,9.14027542 14.5433507,8.82386195 14.3418131,8.63508381 C14.1402754,8.44630566 13.823862,8.45664928 13.6350838,8.65818693 Z" id="形状"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

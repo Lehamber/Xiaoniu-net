@@ -1,0 +1,62 @@
+ #up-nav {
+     height: 34px;
+     border-bottom: 1px solid #eeeeee;
+     line-height: 34px;
+     font-size: 12px;
+     font-family: PingFangSC-Regular;
+     background-color: #fff;
+ }
+ 
+ #up-nav .left-div .beforeLogin,
+ .afterLogin {
+     display: inline-block;
+     margin-left: 10px;
+ }
+ 
+ #up-nav .left-div .afterLogin {
+     display: none;
+ }
+ 
+ #up-nav .left-div .afterLogin .exit {
+     cursor: pointer;
+ }
+ 
+ #up-nav .left-div .tag {
+     color: #444444;
+ }
+ 
+ #up-nav .left-div .icon,
+ .login>a,
+ .userName {
+     color: #ff862c;
+ }
+ 
+ #up-nav .left-div .exit {
+     color: #777777;
+     cursor: pointer;
+     margin-left: 7px;
+ }
+ /* 右边的 个人中心 和 供应商后台 */
+ 
+ #up-nav a {
+     display: inline-block;
+ }
+ /* #up-nav .right-div a {
+     display: inline-block;
+ } */
+ 
+ #up-nav .right-div .tag {
+     color: #eeeeee;
+ }
+ 
+ #up-nav .right-div .new-store>a {
+     color: #39bf3e;
+ }
+ 
+ #up-nav .right-div span:not(:first-of-type)>a:hover {
+     color: #39bf3e;
+ }
+ /*  
+ #up-nav .right-div .new-store>a:hover {
+     text-decoration: underline;
+ } */

@@ -1,0 +1,684 @@
+@import 'reset.css';
+@import 'upNav.css';
+@import 'footer.css';
+body {
+    background-color: #F2F2F2;
+}
+
+
+/* 头部 */
+
+.header .nav-search {
+    background-color: #fff;
+    /* height: 100px; */
+}
+
+
+/* 中间log 和搜索框部分 */
+
+.header .mid-search {
+    margin-top: 25px;
+}
+
+.header .mid-search>div {
+    float: left;
+}
+
+.header .mid-search .left-logo a {
+    display: block;
+    width: 240px;
+    height: 85px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    text-indent: -9999px;
+}
+
+.header .mid-search .search {
+    width: 630px;
+    height: 85px;
+    padding-top: 24px;
+    margin-left: 60px;
+}
+
+.header .mid-search .searchContent {
+    width: 556px;
+    height: 40px;
+    background-color: #fff;
+    border: 2px solid #009237;
+    border-radius: 20px 0 0 20px;
+    border-right: none;
+    position: relative;
+}
+
+.header .mid-search .searchButton {
+    width: 74px;
+    height: 40px;
+    background-image: linear-gradient(to right, #39bf3e, #009237);
+    border-radius: 0 20px 20px 0;
+    color: #ffffff;
+}
+
+.header .mid-search button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 74px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header .mid-search input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 472px;
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+    outline: 0;
+    z-index: 10;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.header .searchContent .icon {
+    font-size: 26px;
+    color: #999999;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.header #replaceholder {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 9px;
+}
+
+.header #replaceholder span {
+    color: #aaaaaa;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.header #replaceholder .searchIcon {
+    color: #aaaaaa;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+/* 搜索结果块 */
+
+.header form {
+    position: relative;
+}
+
+#searResult {
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    background-color: #cccccc;
+}
+
+#searResult>div {
+    height: 38px;
+    width: 546px;
+    padding-left: 20px;
+    line-height: 38px;
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid #f5f5f5;
+    border-top: none;
+    color: #444444;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0;
+}
+
+#searResult>div:hover {
+    color: #fff;
+    background-color: #39bf3e;
+    border: none;
+}
+
+.header .down-nav {
+    height: 36px;
+}
+
+.header .down-nav {
+    margin-top: 18px;
+    display: flex;
+}
+
+.header .down-nav .left-div {
+    flex: 1;
+    width: 200px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #009237;
+    border-radius: 10px 0 0 0;
+}
+
+.header .down-nav .right-div {
+    flex: 5;
+    width: 1000px;
+    height: 36px;
+    line-height: 36px;
+    background-image: linear-gradient(to right, #39bf3e, #009237);
+    border-radius: 0 10px 0 0;
+    display: flex;
+}
+
+.header .down-nav .right-div>div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.header .down-nav .right-div a {
+    color: #fff;
+    display: inline-block;
+    padding: 0 40px;
+}
+
+
+/* 轮班banner图部分 */
+
+.header .banner {
+    position: relative;
+}
+
+.header .banner .pic {
+    position: relative;
+    left: 200px;
+    width: 1000px;
+    height: 380px;
+    overflow: hidden;
+}
+
+.header .banner .pic .p_imgs {
+    position: absolute;
+    left: -4000px;
+    display: flex;
+    /* width: 1000px; */
+    /* 这个1000px要不要都行 */
+}
+
+.header .banner .pic .p_imgs>a {
+    width: 1000px;
+    /* 要不要都行 */
+    overflow: hidden;
+}
+
+.header .banner .pic img {
+    height: 100%;
+    -webkit-user-drag: none;
+}
+
+.header .banner .pic .leftTab {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 36.5px;
+    height: 60px;
+    background-image: url('../images/banner-swicher.png');
+    background-repeat: no-repeat;
+    background-position-x: -73px;
+    background-size: cover;
+}
+
+
+/* .header .banner .pic .leftTab:hover {
+    background-position-x: 0px;
+} */
+
+.header .banner .pic .l-rTab>div:nth-child(1).change {
+    background-position-x: 0px;
+}
+
+.header .banner .pic .rightTab {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 36.5px;
+    height: 60px;
+    background-image: url('../images/banner-swicher.png');
+    background-repeat: no-repeat;
+    background-position-x: -109.5px;
+    background-size: cover;
+}
+
+
+/* .header .banner .pic .rightTab:hover {
+    background-position-x: -36.5px;
+} */
+
+.header .banner .pic .l-rTab>div:nth-child(2).change {
+    background-position-x: -36.5px;
+}
+
+.header .banner .pic .bottomTab {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100px;
+    height: 12px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.header .banner .pic .bottomTab>div {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+
+/* .header .banner .pic .bottomTab>div:hover {
+    background-color: #39bf3e;
+} */
+
+.header .banner .pic .bottomTab>div.color {
+    background-color: #39bf3e;
+}
+
+.header .banner .f4 {
+    position: relative;
+    width: 1000px;
+    left: 200px;
+    display: flex;
+}
+
+.header .banner .f4>div {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.header .banner .f4 img {
+    width: 240px;
+    cursor: pointer;
+}
+
+
+/* 左边导航栏 */
+
+.header .banner .left-nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.header .banner .left-nav li {
+    width: 200px;
+    height: 65px;
+    background-color: #fff;
+    border-bottom: 1px solid #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header .banner .left-nav li>div {
+    height: 32.5px;
+    font-size: 16px;
+}
+
+.header .banner .left-nav li .up {
+    display: flex;
+    align-items: flex-end;
+    color: #222222;
+}
+
+.header .banner .left-nav li .down {
+    display: flex;
+    align-items: center;
+    color: #646464;
+    font-size: 14px;
+    position: relative;
+    left: 15px;
+}
+
+.header .banner .left-nav li .up>i:first-of-type {
+    font-size: 18px;
+    position: relative;
+    left: 10px;
+    top: 3px;
+    font-weight: bold;
+    color: #686868;
+}
+
+.header .banner .left-nav li .up>i:last-of-type {
+    position: absolute;
+    right: 15px;
+}
+
+.header .banner .left-nav li .up>a {
+    position: relative;
+    left: 15px;
+}
+
+
+/* 商品选择列表 ProSelectWin*/
+
+.header .banner .proSelectWin {
+    width: 1000px;
+    min-height: 520px;
+    background-color: #fff;
+    border: 2px solid #39bf3e;
+    border-top: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    z-index: 100;
+    padding: 20px;
+    display: none;
+}
+
+.header .proSelectWin .sm-class {
+    width: 90px;
+    color: #222222;
+    margin-top: 10px;
+}
+
+.header .proSelectWin .pro-wrap {
+    display: flex;
+    justify-content: fles-start;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* .header .banner .proSelectWin:hover {
+    display: block;
+}
+
+.header .banner .left-nav:hover .proSelectWin {
+    display: block;
+} */
+
+
+/* .header .proSelectWin .pro-wrap>div {
+    display: inline-block;
+} */
+
+.header .proSelectWin div.pro-wrap:not(:first-child) {
+    margin-top: 18px;
+}
+
+.header .proSelectWin .pro-wrap .pro-item {
+    display: flex;
+    flex-wrap: wrap;
+    color: #646464;
+    max-width: 850px;
+    margin-left: 16px;
+}
+
+.header .proSelectWin .pro-item .items {
+    padding: 0 10px;
+    border-left: 1px solid #eeeeee;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.header .proSelectWin .pro-item .items:hover {
+    color: #39bf3e;
+}
+
+
+/* 热门推荐 */
+
+.mid .top_recom {
+    height: 73px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.mid .top_recom .line {
+    width: 64px;
+    height: 4px;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    margin: 0 20px;
+}
+
+.mid .top_recom .content {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+
+/* 首页商品展示 */
+
+.mid .classification {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.mid .classification .leftDiv {
+    width: 195px;
+    height: 601px;
+}
+
+.mid .classification .rightDiv {
+    width: 1005px;
+    height: 601px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.mid .classification .product {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin-left: 1px;
+    margin-top: 0px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.mid .classification .product .pro-detail {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    width: 198px;
+    height: 30px;
+    background-color: #39bf3e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    visibility: hidden;
+}
+
+.mid .classification .product .pro-detail i {
+    font-size: 13px;
+}
+
+.mid .classification .product:hover .pro-detail {
+    visibility: visible;
+}
+
+.mid .classification .product:hover {
+    border: 2px solid #39bf3e;
+}
+
+.mid .leftDiv .first-name {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.mid .leftDiv .second-name {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    letter-spacing: 0;
+    margin-left: 20px;
+    margin-top: 6px;
+}
+
+.mid .leftDiv .look-more {
+    width: 83px;
+    height: 24px;
+    margin-left: 20px;
+    margin-top: 12px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.mid .leftDiv .look-more i {
+    font-size: 13px;
+}
+
+
+/* 给左边加背景图 */
+
+.mid .classification:nth-of-type(1) .leftDiv {
+    background-image: url("../images/classification1.png");
+}
+
+.mid .classification:nth-of-type(2) .leftDiv {
+    background-image: url("../images/classification2.png");
+}
+
+.mid .classification:nth-of-type(3) .leftDiv {
+    background-image: url("../images/classification3.png");
+}
+
+.mid .classification:nth-of-type(4) .leftDiv {
+    background-image: url("../images/classification4.png");
+}
+
+.mid .classification:nth-of-type(5) .leftDiv {
+    background-image: url("../images/classification5.png");
+}
+
+.mid .classification:nth-of-type(6) .leftDiv {
+    background-image: url("../images/classification6.png");
+}
+
+
+/* .mid div[class="classification"]:nth-of-type(6) .leftDiv {
+    background-image: url("../images/classification6.png");
+} */
+
+.mid .classification .pro-img {
+    position: relative;
+    margin-top: 20px;
+    height: 160px;
+    width: 160px;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mid .classification .pro-img img {
+    /* min-width: 100%;
+    min-height: 100%; */
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mid .classification .shop-text {
+    margin: 15px 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mid .classification .shop-text .money {
+    font-size: 12px;
+    color: #ff442f;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid .classification .shop-text .money>span {
+    font-size: 18px;
+}
+
+.mid .classification .shop-text .quantity {
+    color: #909090;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid .classification .shop-title {
+    margin: 10px 20px 0;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mid .classification .shop-title>div:first-child {
+    display: inline-block;
+    background-color: #ff442f;
+    font-size: 12px;
+    border-radius: 4px;
+    height: 15px;
+    padding: 0 2px;
+    color: #fff;
+}
+
+.mid .classification .shop-title>div:last-child {
+    margin: 1px 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+.mid .rightDiv .product>div:nth-child(1) {
+    position: absolute;
+    left: -9999px;
+}
+
+.mid .rightDiv .product>div:nth-child(2) {
+    position: absolute;
+    left: -9999px;
+}
+
+
+/*  */
+
+#footer {
+    background-color: #333333;
+}

@@ -1,0 +1,502 @@
+@import 'reset.css';
+@import 'upNav.css';
+@import 'footer.css';
+.header .nav-search {
+    background-color: #fff;
+    /* height: 100px; */
+}
+
+
+/* 中间log 和搜索框部分 */
+
+.header .mid-search {
+    margin-top: 25px;
+}
+
+.header .mid-search>div {
+    float: left;
+}
+
+.header .mid-search .left-logo a {
+    display: block;
+    width: 240px;
+    height: 85px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    text-indent: -9999px;
+}
+
+.header .mid-search .search {
+    width: 630px;
+    height: 85px;
+    padding-top: 24px;
+    margin-left: 60px;
+}
+
+.header .mid-search .searchContent {
+    width: 556px;
+    height: 40px;
+    background-color: #fff;
+    border: 2px solid #009237;
+    border-radius: 20px 0 0 20px;
+    border-right: none;
+    position: relative;
+}
+
+.header .mid-search .searchButton {
+    width: 74px;
+    height: 40px;
+    background-image: linear-gradient(to right, #39bf3e, #009237);
+    border-radius: 0 20px 20px 0;
+    color: #ffffff;
+}
+
+.header .mid-search button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 74px;
+    height: 40px;
+    border-radius: 0 20px 20px 0;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header .mid-search input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 472px;
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+    outline: 0;
+    z-index: 10;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.header .searchContent .icon {
+    font-size: 26px;
+    color: #999999;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.header #replaceholder {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 9px;
+}
+
+.header #replaceholder span {
+    color: #aaaaaa;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.header #replaceholder .searchIcon {
+    color: #aaaaaa;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+/* 搜索结果块 */
+
+.header form {
+    position: relative;
+}
+
+#searResult {
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    background-color: #cccccc;
+}
+
+#searResult>div {
+    height: 38px;
+    width: 546px;
+    padding-left: 20px;
+    line-height: 38px;
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid #f5f5f5;
+    border-top: none;
+    color: #444444;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0;
+}
+
+#searResult>div:hover {
+    color: #fff;
+    background-color: #39bf3e;
+    border: none;
+}
+
+.header .down-nav {
+    width: 100%;
+    min-width: 1200px;
+    height: 36px;
+    border-bottom: 2px solid #39bf3e;
+}
+
+.header .down-nav {
+    margin-top: 18px;
+}
+
+.header .down-nav .wrap {
+    height: 36px;
+    line-height: 36px;
+    display: flex;
+}
+
+.header .down-nav .wrap>div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.header .down-nav .wrap a {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.header .down-nav .wrap a:hover {
+    color: #39bf3e;
+    font-weight: bold;
+}
+
+.header .down-nav .wrap>div:last-child a {
+    color: #39bf3e;
+}
+
+
+/* 内容部分 */
+
+.content .pro-classify {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content .pro-classify .item {
+    width: 132.5px;
+    height: 50px;
+    background-color: #f2f2f2;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.content .pro-classify .item:hover {
+    background-color: #39bf3e;
+    color: #fff;
+}
+
+.content .pro-select-win {
+    border: 1px solid #dddddd;
+    border-top: none;
+    color: #333333;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content .pro-select-win .pro-wrap {
+    padding: 10px 20px;
+    border-bottom: 1px dashed #efefef;
+    display: flex;
+}
+
+.content .pro-select-win .sm-class {
+    margin-top: 10px;
+    width: 125px;
+    display: flex;
+    font-weight: 700;
+    color: #000000;
+}
+
+.content .pro-select-win .pro-item {
+    max-width: 1035px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content .pro-select-win .items {
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+.content .pro-select-win .pro-wrap:hover .sm-class {
+    color: #39bf3e;
+}
+
+.content .pro-select-win .pro-wrap .items:hover {
+    color: #39bf3e;
+}
+
+
+/* 产品展示 */
+
+.content .pro-show {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.content .pro-show .product {
+    margin: 15px 0;
+    margin-left: 40px;
+    width: 208px;
+    height: 315px;
+    border: 1px solid #f4f4f4;
+    /* background-color: yellowgreen; */
+    cursor: pointer;
+    position: relative;
+}
+
+.content .pro-show .product .productID {
+    position: absolute;
+    left: -9999px;
+}
+
+.content .pro-show .product .productName {
+    position: absolute;
+    left: -9999px;
+}
+
+.content .pro-show .product:hover {
+    border: 1px solid #39bf3e;
+}
+
+.content .pro-show .product .pic-wrap {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+}
+
+.content .pro-show .pic-wrap img {
+    /* 这两个要不要都是可以的，我不太明白 min-width 和width之间 是怎么相互影响的 */
+    /* min-width: 100%;
+    min-height: 100%; */
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content .pro-show .shop-text {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0;
+}
+
+.content .pro-show .shop-text .money {
+    font-size: 18px;
+    color: #ff442f;
+}
+
+.content .pro-show .shop-text .quantity {
+    color: #909090;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.content .pro-show .shop-title>div:first-child {
+    font-size: 11px;
+    height: 15px;
+    padding: 0 2px;
+    line-height: 15px;
+    display: inline-block;
+    color: #fff;
+    background-color: #ff442f;
+    border-radius: 2px;
+    margin: 10px 12px 0;
+}
+
+.content .pro-show .shop-title>div:last-child {
+    margin: 1px 10px 0;
+    font-size: 14px;
+    color: #222;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 0;
+    word-break: break-all;
+}
+
+.content .selectPage {
+    /* background-color:  */
+    margin: 50px 0 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.content .selectPage .select-div {
+    display: flex;
+}
+
+.content .selectPage .to-which-page {
+    display: flex;
+}
+
+.content .selectPage .page-div {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    background-color: #f4f4f5;
+    color: #606266;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 2px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* .content .selectPage .page-div:nth-child(6) {
+    background-color: #39bf3e;
+    color: #fff;
+} */
+
+.content .selectPage .page-div:hover {
+    color: #fff;
+    background-color: #39bf3e;
+}
+
+.content .selectPage .more-page {
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    margin: 0 15px;
+    color: #606266;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.content .selectPage .more-page span {
+    background-color: #fff;
+    font-size: 26px;
+}
+
+.content .selectPage .more-page:hover {
+    color: #fff;
+}
+
+.content .selectPage .page-num {
+    margin: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #606266;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content .selectPage .page-num>span {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.content .selectPage input {
+    border: none;
+    background-color: transparent;
+}
+
+.content .selectPage input:focus {
+    outline: none;
+}
+
+.content .selectPage button {
+    border: none;
+    background-color: transparent;
+}
+
+.content .selectPage button:focus {
+    outline: none;
+}
+
+.content .selectPage .to-which-page {
+    height: 40px;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    border-radius: 3px;
+    margin-left: 8px;
+}
+
+.content .to-which-page div {
+    padding: 0 9px 0 15px;
+    border-right: 1px solid #dcdfe6;
+    display: flex;
+    align-items: center;
+}
+
+.content .to-which-page input {
+    height: 40px;
+    width: 54px;
+    padding: 3px;
+    text-align: center;
+    border-right: 1px solid #dcdfe6;
+}
+
+.content .to-which-page button {
+    height: 40px;
+    padding: 3px 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.content .to-which-page button:hover {
+    color: #fff;
+    background-color: #39bf3e;
+}
+
+#footer {
+    background-color: #333333;
+}
+
+
+/* 后面补充的 */
+
+.content .searchEmpty img {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.content .pro-show .product:nth-child(1) {
+    margin-left: 0px;
+}
+
+.content .pro-show .product:nth-child(6) {
+    margin-left: 0px;
+}
+
+.content .pro-show .product:nth-child(11) {
+    margin-left: 0px;
+}
+
+.content .pro-show .product:nth-child(16) {
+    margin-left: 0px;
+}

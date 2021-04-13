@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智农慧通-我有最好的农产品</title>
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- 引入css文件 -->
+    <link href="./css/productDetail.css" rel="stylesheet">
+    <!-- 引入封装好的包 -->
+    <script src="./js/module/serverIP.js"></script>
+    <script src="./js/module/sendAjax.js"></script>
+    <script src="./js/module/proCookie.js"></script>
+
+    <!-- 引入页面加载后 执行的js文件 -->
+    <script src="./js/module/verfiyCookie.js"></script>
+    <script src="./js/productDetail.js"></script>
+</head>
+
+<body>
+    <div id="up-nav">
+        <div class="standardWidth over-clear">
+            <div class="fleft left-div">
+                <span class="tag">欢迎来到智农慧通</span>
+                <div class="beforeLogin">
+                    <span class="iconfont icon">&#xe651;</span>
+                    <span class="login"><a href="./logIn.html">注册登录</a></span>
+                </div>
+                <div class="afterLogin">
+                    <span class="iconfont icon">&#xe651;</span>
+                    <span class="userName">简小橘</span>
+                    <span class="exit">退出</span>
+                </div>
+
+            </div>
+            <div class="fright right-div">
+                <span class="new-store"><a href="#">我要入驻开店</a></span>
+                <span class="iconfont tag">&#xe63b;</span>
+                <span class="person-center"><a href="#">个人中心</a></span>
+                <span class="iconfont tag">&#xe63b;</span>
+                <span class="backstore"><a href="#">供应商后台</a></span>
+            </div>
+        </div>
+    </div>
+    <div id="pro-id">213</div>
+    <div class="head-logo standardWidth">
+        <div class="logo">
+            <!-- <h1><a href="#">智农慧通</a></h1> -->
+            <h1>智农慧通</h1>
+            <img src="./images/logo.png" alt="logo">
+        </div>
+        <div class="businessName">
+            <div class="name">土不啦叽农产品</div>
+            <div class="youXuan"></div>
+        </div>
+        <div class="info">
+            <div class="order">
+                <div class="word">订单</div>
+                <div class="num">598</div>
+            </div>
+            <div class="grade">
+                <div class="word">评分</div>
+                <div class="num">4.9</div>
+            </div>
+        </div>
+    </div>
+    <div class="buss-banner">
+        <div class="wrap standardWidth">
+            <div class="headPic">
+                <img src="./images/defaultHeadPic5.png" alt="头像">
+            </div>
+            <div class="bu-wr-wrap">
+                <div class="bu-w-w-name">土不啦叽农产品</div>
+                <div class="location">
+                    <i class="iconfont">&#xe6f8;</i>
+                    <span>云南省大理白族自治州剑川县</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="n-wrap standardWidth">
+            <div class="item">首页</div>
+            <div class="item">供应大厅</div>
+        </div>
+    </div>
+    <div class="content standardWidth">
+        <div class="now-location"></div>
+        <div class="c-wrap">
+            <div class="left-info">
+                <div class="up-pic">
+                    <img src="./images/pro1.jpeg" alt="pro">
+                </div>
+                <div class="pic-select">
+                    <div class="option">
+                        <img src="./images/pro1.jpeg" alt="pro">
+                    </div>
+                    <div class="option">
+                        <img src="./images/pro2.jpeg" alt="pro">
+                    </div>
+                    <div class="option">
+                        <img src="./images/pro3.jpeg" alt="pro">
+                    </div>
+                    <div class="option">
+                        <img src="./images/pro4.jpeg" alt="pro">
+                    </div>
+                </div>
+            </div>
+            <div class="right-info">
+                <div class="title-and-time ">
+                    <div class="t-wrap">
+                        <div class="t-you-xuan">优选</div>
+                        <div class="t-title">广西武鸣沃柑橘子新鲜甜水果新鲜应季水果非皇帝柑桔子！产品火热招商中，赶快来下单吧</div>
+                    </div>
+                    <div class="time">
+                        更新时间:<span>2020年12月26日 09:10:51</span>
+                    </div>
+                </div>
+                <div class="money">
+                    <span class="m-word">单价</span>
+                    <span class="m-num">11</span>
+                    <span class="unit">元</span>
+                </div>
+                <div class="loca">
+                    发货地址:<span>云南省大理白族自治州剑川县</span>
+                </div>
+                <div class="stock-and-eval">
+                    <div class="stock">
+                        库存<span>188</span>
+                    </div>
+                    <div class="eval">
+                        累计评价<span>89</span>
+                    </div>
+                </div>
+                <div class="specification">
+                    <div class="s-title">规格选择:</div>
+                    <div class="s-unit">按<span>箱</span></div>
+                </div>
+                <div class="amount">
+                    <div>购买数量:</div>
+                    <div class="a-wrap">
+                        <button class="reduce">-</button>
+                        <input type="text" value="1">
+                        <button class="add">+</button>
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="phoneID">123123</div>
+                    <button class="phone">打电话</button>
+                    <button class="now-buy">立即采购</button>
+                    <button class="collect">收藏</button>
+                </div>
+            </div>
+        </div>
+        <div class="mid-banner">
+            <img src="./images/mid-banner.png" alt="">
+        </div>
+    </div>
+    <div id="footer">
+        <div><span>豫ICP备13007354号-1 | 服务热线：400-009-8699</span></div>
+        <div><span>互联网药品信息服务资格证书:(湘)-经营性-2020-0005 河南智农慧通科技有限公司
+            营业执照号</span></div>
+        <div><span>增值电信业务经营许可证：经营许可证编号：豫B2-20130072</span></div>
+        <div><span>©-2020 Cnhnb B2B SYSTEM All Rights Reserved</span></div>
+        <div><img src="./images/footer.png" alt="行业认证"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智农慧通-我有最好的农产品</title>
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- 引入css文件 -->
+    <link href="css/index.css" rel="stylesheet">
+    <!-- 引入封装好的包 -->
+    <script src="./js/module/serverIP.js"></script>
+    <script src="./js/module/sendAjax.js"></script>
+    <script src="./js/module/proCookie.js"></script>
+
+    <!-- 引入页面加载后 执行的js文件 -->
+    <script src="./js/module/verfiyCookie.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <!-- header导航 和 搜索部分 -->
+        <div class="nav-search">
+            <div id="up-nav">
+                <div class="standardWidth over-clear">
+                    <div class="fleft left-div">
+                        <span class="tag">欢迎来到智农慧通</span>
+                        <div class="beforeLogin">
+                            <span class="iconfont icon">&#xe651;</span>
+                            <span class="login"><a href="./logIn.html">注册登录</a></span>
+                        </div>
+                        <div class="afterLogin">
+                            <span class="iconfont icon">&#xe651;</span>
+                            <span class="userName">简小橘</span>
+                            <span class="exit">退出</span>
+                        </div>
+
+                    </div>
+                    <div class="fright right-div">
+                        <span class="new-store"><a href="#">我要入驻开店</a></span>
+                        <span class="iconfont tag">&#xe63b;</span>
+                        <span class="person-center"><a href="#">个人中心</a></span>
+                        <span class="iconfont tag">&#xe63b;</span>
+                        <span class="backstore"><a href="#">供应商后台</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="mid-search standardWidth clear">
+                <div class="left-logo">
+                    <h1><a href="#">智农慧通</a></h1>
+                </div>
+                <div class="search">
+                    <form onsubmit="return false">
+                        <div class="searchContent fleft">
+                            <!-- onselectstart 是用来 禁止选择文字的 -->
+                            <div id="replaceholder" onselectstart="return false">
+                                <i class="iconfont searchIcon">&#xe602;</i>
+                                <span>请输入您要的货物</span>
+                            </div>
+                            <input type="text" id="searchBox" autocomplete="off">
+                            <span class="iconfont icon">&#xe633;</span>
+                        </div>
+                        <div class="searchButton fleft">
+                            <button type="submit">搜索</button>
+                        </div>
+                        <div id="searResult">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!-- banner头上的 nav -->
+            <div class="down-nav standardWidth clear">
+                <div class="left-div">
+                    <i class="iconfont">&#xe605;</i>
+                    <span>商品分类</span>
+                </div>
+                <div class="right-div clear">
+                    <div><a href="./index.html">首页</a></div>
+                    <div><a href="javascript:void(0)">供应大厅</a></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- banner部分 -->
+        <div class="banner standardWidth">
+            <div class="left-nav">
+                <ul>
+                    <li>
+                        <div class="up">
+                            <i class="iconfont">&#xe616;</i>
+                            <a href="javascript:void(0)">禽畜肉蛋</a>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                        <div class="down">
+                            <span>肉类 活禽</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="up">
+                            <i class="iconfont">&#xe62f;</i>
+                            <a href="javascript:void(0)">水果</a>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                        <div class="down">
+                            <span>柑橘类 核果仁类</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="up">
+                            <i class="iconfont">&#xe63c;</i>
+                            <a href="javascript:void(0)">蔬菜</a>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                        <div class="down">
+                            <span>葱姜蒜类 根茎菜类</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="up">
+                            <i class="iconfont">&#xe63a;</i>
+                            <a href="javascript:void(0)">粮油米面</a>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                        <div class="down">
+                            <span>谷类作物 油料作物</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="up">
+                            <i class="iconfont">&#xe64c;</i>
+                            <a href="javascript:void(0)">农副加工</a>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                        <div class="down">
+                            <span>坚果 干果</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="up">
+                            <i class="iconfont">&#xe61e;</i>
+                            <a href="javascript:void(0)">农资农机</a>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                        <div class="down">
+                            <span>农机机械设备 饲料</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="up">
+                            <i class="iconfont">&#xe626;</i>
+                            <a href="javascript:void(0)">种子种苗</a>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                        <div class="down">
+                            <span>水果种苗 蔬菜种子</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="up">
+                            <i class="iconfont">&#xe70b;</i>
+                            <a href="javascript:void(0)">水产</a>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                        <div class="down">
+                            <span>淡水鱼类 贝类</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="proSelectWin">
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                    </div>
+                </div>
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                    </div>
+                </div>
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                    </div>
+                </div>
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                    </div>
+                </div>
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                    </div>
+                </div>
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛肉</div>
+
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                    </div>
+                </div>
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                    </div>
+                </div>
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                    </div>
+                </div>
+                <div class="pro-wrap">
+                    <div class="sm-class">肉类</div>
+                    <div class="pro-item">
+                        <div class="items">猪副产品</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                        <div class="items">牛副产品</div>
+                        <div class="items">牛肉</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="pic">
+                <div class="p_imgs">
+                    <a href="javascript:void(0)"><img src="./images/banner1.jpg"></a>
+                    <a href="javascript:void(0)"><img src="./images/banner2.jpg"></a>
+                    <a href="javascript:void(0)"><img src="./images/banner3.jpg"></a>
+                    <a href="javascript:void(0)"><img src="./images/banner4.jpg"></a>
+                    <a href="javascript:void(0)"><img src="./images/banner1.jpg"></a>
+                    <a href="javascript:void(0)"><img src="./images/banner2.jpg"></a>
+                    <a href="javascript:void(0)"><img src="./images/banner3.jpg"></a>
+                    <a href="javascript:void(0)"><img src="./images/banner4.jpg"></a>
+                </div>
+                <div class="l-rTab">
+                    <div class="leftTab"></div>
+                    <div class="rightTab"></div>
+                </div>
+                <div class="bottomTab">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="f4">
+                <div><img src="./images/advertise1.png"></div>
+                <div><img src="./images/advertise2.png"></div>
+                <div><img src="./images/advertise3.png"></div>
+                <div><img src="./images/advertise4.png"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mid standardWidth">
+        <!-- 热门推荐 -->
+        <nav class="top_recom">
+            <div class="line"></div>
+            <img src="./images/hotRecom.png">
+            <div class="content">热门推荐</div>
+            <div class="line"></div>
+        </nav>
+        <div class="classification">
+            <div class="leftDiv">
+                <div class="first-name">禽畜肉蛋</div>
+                <div class="second-name">基地直供 运输包括</div>
+                <div class="look-more" style="color: #ff6d00;">
+                    <span>查看更多</span>
+                    <i class="iconfont">&#xe635;</i>
+                </div>
+            </div>
+            <div class="rightDiv">
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="classification">
+            <div class="leftDiv">
+                <div class="first-name">水果</div>
+                <div class="second-name">产地货源 一手价格</div>
+                <div class="look-more" style="color: #ff6d00;">
+                    <span>查看更多</span>
+                    <i class="iconfont">&#xe635;</i>
+                </div>
+            </div>
+            <div class="rightDiv">
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="classification">
+            <div class="leftDiv">
+                <div class="first-name">蔬菜</div>
+                <div class="second-name">品种丰富 以质论价</div>
+                <div class="look-more" style="color: #ff6d00;">
+                    <span>查看更多</span>
+                    <i class="iconfont">&#xe635;</i>
+                </div>
+            </div>
+            <div class="rightDiv">
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="classification">
+            <div class="leftDiv">
+                <div class="first-name">粮油米面</div>
+                <div class="second-name">货品齐全 质稳价优</div>
+                <div class="look-more" style="color: #ff6d00;">
+                    <span>查看更多</span>
+                    <i class="iconfont">&#xe635;</i>
+                </div>
+            </div>
+            <div class="rightDiv">
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="classification">
+            <div class="leftDiv">
+                <div class="first-name">农副加工</div>
+                <div class="second-name">货源稳定 量大优惠</div>
+                <div class="look-more" style="color: #ff6d00;">
+                    <span>查看更多</span>
+                    <i class="iconfont">&#xe635;</i>
+                </div>
+            </div>
+            <div class="rightDiv">
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="classification">
+            <div class="leftDiv">
+                <div class="first-name">农资农机</div>
+                <div class="second-name">厂家直发 一手货源</div>
+                <div class="look-more" style="color: #ff6d00;">
+                    <span>查看更多</span>
+                    <i class="iconfont">&#xe635;</i>
+                </div>
+            </div>
+            <div class="rightDiv">
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="product">
+                        <div class="productID">123123</div>
+                        <div class="productName">公鸡</div>
+                        <div class="pro-img">
+                            <img src="#">
+                        </div>
+                        <div class="shop-text">
+                            <div class="money">
+                                ￥<span>250</span>
+                            </div>
+                            <div class="quantity">
+                                库存<span>1000</span>
+                            </div>
+                        </div>
+                        <div class="shop-title">
+                            <div>优选</div>
+                            <div>全国批发整箱420枚/箱正宗农村散养鲜艳土鸡蛋绿壳土鸡蛋</div>
+                        </div>
+                        <div class="pro-detail">
+                            <span>查看详情</span>
+                            <i class="iconfont">&#xe635;</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div><span>豫ICP备13007354号-1 | 服务热线：400-009-8699</span></div>
+        <div><span>互联网药品信息服务资格证书:(湘)-经营性-2020-0005 河南智农慧通科技有限公司
+            营业执照号</span></div>
+        <div><span>增值电信业务经营许可证：经营许可证编号：豫B2-20130072</span></div>
+        <div><span>©-2020 Cnhnb B2B SYSTEM All Rights Reserved</span></div>
+        <div><img src="./images/footer.png" alt="行业认证"></div>
+    </div>
+</body>
+
+</html>

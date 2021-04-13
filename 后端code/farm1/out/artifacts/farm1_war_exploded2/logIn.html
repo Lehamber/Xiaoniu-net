@@ -1,0 +1,90 @@
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="css/logIn.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="./index.html">智农慧通</a></h1>
+            </div>
+        </div>
+        <div class="pic">
+            <img src="./images/login.jpg">
+        </div>
+        <div class="footer">footer</div>
+    </div>
+    <div class="logInBox">
+        <h2>用户登录</h2>
+        <form target="the_iframe">
+            <div class="form-group">
+                <label for="account" class="sr-only">账号</label>
+                <input type="text" class="form-control" id="account" placeholder="邮箱/手机号">
+            </div>
+            <div class="form-group">
+                <label for="password" class="sr-only">密码</label>
+                <input type="password" class="form-control" id="password" placeholder="密码">
+            </div>
+            <div class="info"></div>
+
+            <button class="btn btn-success">登录</button>
+            <div class="signIn">
+                <div>
+                    <i class="iconfont">&#xe635;</i>
+                    <a href="#">立即注册</a>
+                </div>
+            </div>
+        </form>
+        <iframe id="is_iframe" name="the_iframe" style="display:none;"></iframe>
+    </div>
+
+    <script>
+        $(function() {
+            $('.logInBox form>button').eq(0).on('click', function() {
+                let account = $('#account').val();
+                let password = $('#password').val();
+
+                let data = {
+                    account: account,
+                    password: password
+                };
+
+                let success = function(aaa) {
+                    console.log(aaa);
+                    //  window.location.href = './index.html';
+                }
+                $.ajax({
+                    type: 'post',
+                    url: 'http://172.32.100.201:8080/farm1/userServlet/login',
+                    data:data,
+
+                    //dataType: 'json',
+                    //data: JSON.stringify(data),
+                    success: success,
+                    // 设置超时时间
+                    timeout: 100000,
+                    error: function(data) {
+                        alert(data+"访问超时或异常，请稍后重试");
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
